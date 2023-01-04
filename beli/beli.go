@@ -4,7 +4,7 @@ import "fmt"
 
 func Pengecekan(d, c int) {
 	if d >= c {
-		fmt.Print("Terima Kasih Sudah Berbelanja")
+		fmt.Println("Terima Kasih Sudah Berbelanja")
 	} else if d == 0 {
 		fmt.Println("Pulang Aja Deh Kalo Gabawa Uang")
 	} else {

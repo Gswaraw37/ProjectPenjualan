@@ -5,7 +5,24 @@ import (
 	"fmt"
 	"personal-project/penjualan/beli"
 	"personal-project/penjualan/jual"
+	"strings"
 )
+
+func Ulang() {
+	var Pilihan string
+	fmt.Println("\nApakah Anda Mau Membeli Lagi? (Y/T)")
+	fmt.Scan(&Pilihan)
+	fmt.Println()
+
+	if strings.ToUpper(Pilihan) == "Y" {
+		defer main()
+	} else if strings.ToUpper(Pilihan) == "T" {
+		fmt.Println("Hati - Hati Di Jalan")
+		return
+	} else {
+		fmt.Println("Pilih Yang Bener Dong")
+	}
+}
 
 func Input() {
 	jual.DaftarJual()
@@ -21,19 +38,19 @@ func Pilihan(a int) {
 	switch a {
 	case 1:
 		beli.Nike()
-		break
+		Ulang()
 	case 2:
 		beli.Vans()
-		break
+		Ulang()
 	case 3:
 		beli.Adidas()
-		break
+		Ulang()
 	case 4:
 		beli.Reebok()
-		break
+		Ulang()
 	case 5:
 		beli.Sketcher()
-		break
+		Ulang()
 	default:
 		defer main()
 		fmt.Println(errors.New("Maaf, Sepatu Tidak Tersedia\n"))
